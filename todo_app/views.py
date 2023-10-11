@@ -8,7 +8,8 @@ def index(request):
     if request.method == 'POST':
         form = TaskForm(request.POST)
         if form.is_valid():
-            form.save()
+            form.save() 
+            return redirect('home')
     
     tasks = Task.objects.all()
     context = {'tasks': tasks, 'form': form} 
