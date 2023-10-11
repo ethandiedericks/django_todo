@@ -16,30 +16,64 @@
     <div class="container d-flex align-items-center justify-content-center flex-column" >
         <h3>Todo App</h3>
         <div class="d-flex align-items-center mb-3 ">
-            <div class="form-group me-2 mb-0">
-                <input type="text" class="form-control" placeholder="Enter Task Here">
-            </div>
-            <button class="btn btn-primary me-2" type="submit">Save</button>
-            <button class="btn btn-warning" type="submit">Get Tasks</button>
+            <form method= "POST" action="">
+                {% csrf_token %}
+                <div class="form-group me-2 mb-0">
+                    {{ form.title }}
+                </div>
+                <button class="btn btn-primary" type="submit">Save</button>
+            </form>  
         </div>
         <!-- {{ task }} -->
         <div class="table-wrapper">
             <table class="table table-hover table-bordered">
               <thead>
                 <tr>
-                  <th>No.</th>
                   <th>Todo Item</th>
                   <th>Status</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>''</td>
-                  <td>''</td>
-                  <td>''</td>
-                  <td>''</td>
-                </tr>
+                {% for task in tasks %}
+                    {% if task.status %}
+                        <tr>
+                            <td> {{ task.title }}</td>
+                            <td> Completed </td>
+                            <td>
+                                
+                                <a href="{% url 'deleteTask' task.id %}">
+                                    <button class="btn btn-danger">
+                                        Delete
+                                    </button>
+                                </a>
+                                <a href="{% url 'updateTask' task.id %}">
+                                    <button class="btn btn-success">
+                                        Finished
+                                    </button>
+                                </a>
+                          
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td> {{ task.title }}</td>
+                            <td> In Progress </td>
+                            <td>
+                                <a href="{% url 'deleteTask' task.id %}">
+                                    <button class="btn btn-danger">
+                                        Delete
+                                    </button>
+                                </a>
+                                <a href="{% url 'updateTask' task.id %}">
+                                    <button class="btn btn-success">
+                                        Finished
+                                    </button>
+                                </a>    
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
               </tbody>
             </table>
           </div>
