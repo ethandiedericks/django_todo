@@ -6,10 +6,10 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container d-flex align-items-center justify-content-center flex-column" id="container" >
+    <div class="container d-flex align-items-center justify-content-center flex-column overflow-auto position-relative" id="container" >
         
-        <div class="sub-container d-flex align-items-center justify-content-center flex-column" id="sub-container">
-            <div class="form-container " id="form-container">
+        <div class="sub-container d-flex align-items-center  flex-column overflow-auto top-50 " id="sub-container">
+            
                 <h3>Todo App</h3>
                 <!-- create tasks -->
                 <form method= "POST" action="">
@@ -21,7 +21,7 @@
                         <button class="btn btn-primary" type="submit">Add</button>
                     </div>
                 </form>  
-            </div>
+           
             
             <!-- populate table with tasks from database -->
             <div class="table-wrapper" id="table-wrapper">
