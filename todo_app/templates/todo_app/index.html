@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container d-flex align-items-center justify-content-center flex-column overflow-auto position-relative" id="container" >
+    <div class="container-fluid d-flex align-items-center justify-content-center flex-column overflow-auto position-relative" id="container" >
         
         <div class="sub-container d-flex align-items-center  flex-column overflow-auto top-50 " id="sub-container">
             
@@ -42,8 +42,8 @@
                                 <td class="striker"> {{ task.title }}</td>
                                 <td> Completed </td>
                                 <td> 
-                                    <a class="btns" href="{% url 'updateTask' task.id %}" >
-                                        <button class="btn btn-success">
+                                    <a class="btns " href="{% url 'updateTask' task.id %}" >
+                                        <button class="btn disabled btn-outline-success">
                                             Finished
                                         </button>
                                     </a>
