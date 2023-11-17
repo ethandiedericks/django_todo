@@ -12,9 +12,9 @@ Clone this repo:
 git clone https://github.com/ethandiedericks/django_todo.git
 ```
 Change directory into the project directory:
-'''
+```
 cd django_todo
-'''
+```
 Create a virtual environment:
 ```
 virtualenv env
