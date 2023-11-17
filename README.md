@@ -27,6 +27,10 @@ Install the required dependencies:
 ```
 pip install -r requirements.txt
 ```
+Run the server:
+```
+python3 manage.py runserver
+```
 And Boom! You're up and running!
 
 Feel free to contribute towards this project!
