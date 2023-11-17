@@ -7,6 +7,10 @@ This is a basic todo app which allows you to add a task, adjust the status of th
 
 ## Documentation
 
+Clone this repo:
+```
+git clone https://github.com/ethandiedericks/django_todo.git
+```
 Create a virtual environment:
 ```
 virtualenv env
